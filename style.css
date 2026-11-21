@@ -1,0 +1,143 @@
+/* Eljan Justice Watch Canada: design draft. Serif headings, plain sans body, navy and white, red used sparingly. */
+:root{
+  --navy:#0D2B5E; --navy-deep:#091d42; --red:#D5232B; --ink:#1B2430; --grey:#5B6672; --line:#D9DEE6; --pale:#F3F5F8; --white:#fff;
+  --serif:Georgia,"Times New Roman",serif; --sans:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  --wrap:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 var(--sans);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:var(--navy)}
+a:hover{color:var(--red)}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:10px 16px;z-index:99}
+.skip:focus{left:12px;top:12px}
+
+/* preview strip */
+.draft{background:var(--pale);border-bottom:1px solid var(--line);font-size:13px;color:var(--grey);padding:7px 0;text-align:center}
+.draft b{color:var(--ink);font-weight:600}
+
+/* header */
+.top{border-top:5px solid var(--navy);position:relative}
+.top::after{content:"";position:absolute;right:0;top:-5px;width:96px;height:5px;background:var(--red)}
+.head{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
+.brand img{height:62px;width:auto;display:block}
+.nav{display:flex;gap:6px;align-items:center}
+.nav a{text-decoration:none;color:var(--ink);font-size:15px;padding:10px 12px;border-bottom:2px solid transparent}
+.nav a:hover,.nav a[aria-current="page"]{border-bottom-color:var(--red);color:var(--navy)}
+.nav .cta{background:var(--navy);color:#fff;margin-left:8px;border-radius:2px;border-bottom:0;padding:10px 18px}
+.nav .cta:hover{background:var(--red);color:#fff}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:2px;padding:9px 12px;font:inherit;color:var(--navy);cursor:pointer}
+
+/* type */
+h1,h2,h3{font-family:var(--serif);color:var(--navy);line-height:1.15;font-weight:700;margin:0 0 .5em}
+h1{font-size:clamp(40px,6vw,68px);letter-spacing:-.5px}
+h2{font-size:clamp(28px,3.6vw,40px)}
+h3{font-size:22px}
+p{margin:0 0 1em}
+.lede{font-size:clamp(19px,2.2vw,23px);line-height:1.55;color:#2c3746;max-width:34em}
+.kicker{font:600 13px/1 var(--sans);letter-spacing:2px;text-transform:uppercase;color:var(--red);margin:0 0 18px;display:block}
+
+/* sections */
+section{padding:84px 0}
+.s-pale{background:var(--pale)}
+.s-navy{background:var(--navy);color:#e6ecf7}
+.s-navy h2,.s-navy h3{color:#fff}
+.s-navy a{color:#fff}
+.s-navy .kicker{color:#ff8b90}
+
+/* hero */
+.hero{padding:96px 0 88px}
+.hero .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:end}
+.hero h1 span{color:var(--red)}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:16px;padding:14px 26px;border:2px solid var(--navy);color:var(--navy);border-radius:2px;background:transparent}
+.btn:hover{background:var(--navy);color:#fff}
+.btn.solid{background:var(--navy);color:#fff}
+.btn.solid:hover{background:var(--red);border-color:var(--red)}
+.hero aside{border-left:3px solid var(--red);padding:4px 0 4px 26px;font-size:16px;color:var(--grey)}
+.hero aside strong{display:block;font:700 15px var(--sans);color:var(--navy);margin-bottom:6px}
+
+/* values list: ruled, not cards */
+.values{display:grid;grid-template-columns:1fr 1fr;gap:0 72px;margin-top:40px;counter-reset:v}
+.values div{border-top:1px solid var(--line);padding:26px 0 30px;display:grid;grid-template-columns:44px 1fr;gap:6px 14px}
+.values div::before{counter-increment:v;content:counter(v,decimal-leading-zero);font:700 15px var(--sans);color:var(--red);padding-top:6px}
+.values h3{margin:0 0 4px}
+.values p{margin:0;color:var(--grey);grid-column:2}
+.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px}
+.split h2{position:sticky;top:24px;align-self:start}
+
+/* placeholder blocks */
+.todo{border:2px dashed #b9c3d3;border-radius:3px;padding:22px 26px;background:rgba(255,255,255,.6);color:var(--grey);font-size:16px}
+.todo b{color:var(--navy)}
+.stack>*+*{margin-top:18px}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+/* contact */
+.contact-row{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.contact-row dl{margin:0}
+.contact-row dt{font:600 13px var(--sans);letter-spacing:1.5px;text-transform:uppercase;color:#9fb2d6;margin-top:22px}
+.contact-row dd{margin:4px 0 0;font-size:20px}
+.s-navy .btn{border-color:#fff;color:#fff}
+.s-navy .btn:hover{background:#fff;color:var(--navy)}
+.s-navy .btn.solid{background:var(--red);border-color:var(--red)}
+
+/* page head */
+.pagehead{padding:70px 0 56px;border-bottom:1px solid var(--line)}
+.pagehead h1{font-size:clamp(36px,5vw,56px);margin-bottom:.3em}
+.prose{max-width:44em}
+.prose h2{margin-top:1.6em;font-size:28px}
+
+/* footer */
+footer{background:var(--navy-deep);color:#b9c6df;padding:56px 0 30px;font-size:15px}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer img{height:56px;width:auto}
+footer h4{margin:0 0 12px;font:600 13px var(--sans);letter-spacing:1.5px;text-transform:uppercase;color:#fff}
+footer a{color:#b9c6df;text-decoration:none;display:block;padding:3px 0}
+footer a:hover{color:#fff}
+.legal{border-top:1px solid rgba(255,255,255,.14);margin-top:36px;padding-top:20px;font-size:13px;color:#8fa0c0}
+
+/* subtle reveal, off for reduced motion */
+.rv{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:900px){
+  section{padding:60px 0}
+  .hero{padding:56px 0}
+  .hero .grid,.split,.contact-row,footer .grid,.cols3{grid-template-columns:1fr;gap:32px}
+  .values{grid-template-columns:1fr}
+  .split h2{position:static}
+  .burger{display:block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:8px 24px 18px;z-index:20}
+  .nav.open{display:flex}
+  .nav a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .nav .cta{margin:12px 0 0;text-align:center}
+  .brand img{height:50px}
+  .top{position:relative}
+}
+
+/* hero artwork + entrance animation */
+.hero{position:relative;overflow:hidden}
+.hero .grid{position:relative;z-index:1}
+.hero-art{position:absolute;right:-60px;top:50%;width:min(620px,52vw);height:auto;transform:translateY(-50%);opacity:0;pointer-events:none;animation:artIn 1.6s ease .2s forwards,drift 14s ease-in-out 1.8s infinite alternate}
+@keyframes artIn{to{opacity:.13}}
+@keyframes drift{from{transform:translateY(-50%) translateX(0)}to{transform:translateY(-52%) translateX(-14px)}}
+.hero .kicker,.hero h1,.hero .lede,.hero .btns,.hero aside{opacity:0;animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .kicker{animation-delay:.05s}.hero h1{animation-delay:.2s}.hero .lede{animation-delay:.4s}.hero .btns{animation-delay:.55s}.hero aside{animation-delay:.75s}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.top::after{animation:grow 1.2s ease .3s both;transform-origin:right}
+@keyframes grow{from{transform:scaleX(0)}to{transform:none}}
+.values div{transition:background .3s,padding-left .3s}
+.values div:hover{background:var(--white);padding-left:12px}
+.btn{transition:background .25s,color .25s,transform .25s}
+.btn:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.hero-art{animation:none;opacity:.13}.hero .kicker,.hero h1,.hero .lede,.hero .btns,.hero aside{animation:none;opacity:1}.top::after{animation:none}.btn:hover{transform:none}}
+@media (max-width:900px){.hero-art{right:-120px;width:90vw;opacity:.1}@keyframes artIn{to{opacity:.1}}}
+
+/* full-length transparent hero image: stands on the section floor, right side */
+.hero:has(.hero-art){padding-bottom:0}
+.hero-art{top:auto;bottom:0;right:4%;width:auto;height:92%;max-height:640px;transform:none;opacity:0;animation:personIn 1.2s cubic-bezier(.2,.7,.2,1) .35s forwards}
+@keyframes personIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@media (max-width:900px){.hero-art{opacity:.15;height:70%;right:-10%;animation:none}}
